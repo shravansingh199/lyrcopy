@@ -9,14 +9,19 @@ title = 'My New Hugo Site'
     weight = 10
 
   [[menus.main]]
-    name = 'Posts'
-    pageRef = '/posts'
+    name = 'Contact'
+    pageRef = '/pages/contact'
     weight = 20
 
   [[menus.main]]
-    name = 'Tags'
-    pageRef = '/tags'
+    name = 'Privacy Policy'
+    pageRef = '/pages/privacy-policy'
     weight = 30
+  
+  [[menus.main]]
+    name = 'Disclaimer'
+    pageRef = '/pages/disclaimer'
+    weight = 40
 
 [module]
   [module.hugoVersion]

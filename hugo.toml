@@ -8,7 +8,5 @@ theme = 'my theme'
     dir = ':cacheDir/images'
 
 [taxonomies]
-tag = "tags"
-category = "categories"
 album = "albums"
 artist = "artists"
