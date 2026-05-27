@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <section class="not-found">
+    <h1>404</h1>
+    <p>That page doesn't exist or has been moved.</p>
+
+    <a href="{{ "/" | relURL }}">← Back to home</a>
+  <h3>Recently Published ↓</h3>
+<ul>
+  {{ range first 5 (where .Site.RegularPages "Type" "lyrics") }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+  {{ end }}
+</ul>
+  </section>
+{{ end }}

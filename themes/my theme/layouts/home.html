@@ -1,0 +1,37 @@
+{{ define "main" }}
+  {{ .Content }}
+
+  {{ $lyrics := where site.RegularPages "Type" "lyrics" }}
+
+{{ $total := len $lyrics }}
+<h4 class="totals">Total posts: <strong>{{ $total }}</strong></h4>
+
+  {{ $paginator := .Paginate $lyrics }}
+
+  {{ range $paginator.Pages }}
+    <section>
+
+      {{ with .Params.albums }}
+        <h4 class="listpage-album-name"><a href="{{ (printf "albums/%s" (. | urlize)) | relURL }}">{{ . }}</a></h4>
+      {{ end }}
+
+      <h2 class="listpage-song-name"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+      <p class="listpage-song-summary">
+        {{ .Summary }}
+        </p>
+
+      {{ with .Params.artists }}
+        <p class="artist-list"><strong>{{ range $index, $element := . -}}
+        {{- if gt $index 0 }} {{ end }}<a href="{{ (printf "artists/%s" ($element | urlize)) | relURL }}">{{ $element }}</a>
+            {{- end }}</strong></p>
+      {{ end }}
+
+    </section>
+    <hr>
+    </br>
+  {{ end }}
+
+  {{ partial "pagination.html" . }}
+
+
+{{ end }}

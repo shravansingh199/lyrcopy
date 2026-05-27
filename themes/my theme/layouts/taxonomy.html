@@ -1,0 +1,6 @@
+{{ define "main" }}
+  {{ .Content }}
+  {{ range sort .Pages "Title" }}
+    <h2><a href="{{ .RelPermalink }}">{{ .Data.Term }}</a></h2>
+  {{ end }}
+{{ end }}

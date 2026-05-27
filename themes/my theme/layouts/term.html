@@ -1,0 +1,16 @@
+{{ define "main" }}
+
+{{ if eq .Data.Singular "artist" }}
+    <p>Browse songs by:</p>
+  {{ end }}
+
+  {{ if eq .Data.Singular "album" }}
+    <p>Browse songs in:</p>
+  {{ end }}
+
+  <h2>{{ .Data.Term }}</h2>
+  {{ .Content }}
+  {{ range sort .Pages "Title" }}
+    <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+  {{ end }}
+{{ end }}

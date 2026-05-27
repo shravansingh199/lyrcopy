@@ -1,0 +1,25 @@
+{{ define "main" }}
+<header>
+    <h1>🎶 All Lyrics Titles</h1>
+</header>
+
+{{ $pages := where site.RegularPages "Type" "lyrics" }}
+{{ $lyricsCount := len $pages }}
+
+{{ if gt $lyricsCount 0 }}
+    <p>Found **{{ $lyricsCount }}** lyrics posts:</p>
+    <ol>
+        {{ range $index, $page := $pages }}
+        {{/* The $index variable in range starts at 0, so we add 1 for proper numbering */}}
+        <li>
+            <a href="{{ $page.Permalink }}">
+                <h5>{{ $page.Title }}</h5>
+            </a>
+        </li>
+        {{ end }}
+    </ol>
+{{ else }}
+    <p>No lyrics posts found with `type: "lyrics"`. Please check your frontmatter.</p>
+{{ end }}
+
+{{ end }}

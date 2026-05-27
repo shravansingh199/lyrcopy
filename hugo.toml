@@ -1,0 +1,14 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'L I R I F Y'
+theme = 'my theme'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
+[taxonomies]
+tag = "tags"
+category = "categories"
+album = "albums"
+artist = "artists"
