@@ -1,11 +1,27 @@
-.site-header {
-    padding: 18px 0 20px;
+.totals {
+    margin-top: 0;
+}
 
-    text-align: center;
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    width: 100%;
+
+    padding: 18px 0 14px;
 
     border-bottom: 1px solid rgba(127,127,127,0.15);
 
-    margin-bottom: 36px;
+    margin-bottom: 11px;
+}
+
+.site-header {
+    margin: 0;
+
+    text-align: left;
 }
 
 .site-header h2 {
@@ -322,61 +338,95 @@ a {
     opacity: 0.5;
 }
 
-.main-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
-    gap: 14px;
-
-    margin: 28px 0 10px;
-
-    padding-bottom: 18px;
-
-    border-bottom: 1px solid rgba(127,127,127,0.12);
+.site-header h2,
+.site-header p {
+    margin: 0;
 }
 
-.main-nav a {
-    text-decoration: none;
+.main-nav {
+    margin: 0;
+
+    position: relative;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-toggle {
+    background: rgba(127,127,127,0.08);
+
+    border: none;
+
     color: inherit;
 
-    font-size: 0.95rem;
-    font-weight: 600;
-
-    letter-spacing: 0.4px;
+    font-size: 1rem;
 
     padding: 8px 14px;
 
     border-radius: 999px;
 
-    background: rgba(127,127,127,0.06);
+    cursor: pointer;
 
     transition:
         background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease,
-        opacity 0.2s ease;
-
-    opacity: 0.82;
+        transform 0.2s ease;
 }
 
-.main-nav a:hover {
+.menu-toggle:hover {
     background: rgba(255,77,109,0.12);
 
-    color: #ff4d6d;
-
     transform: translateY(-1px);
-
-    opacity: 1;
 }
 
-.main-nav a.active {
+.menu-items {
+    position: absolute;
+
+    top: 48px;
+
+    display: none;
+    flex-direction: column;
+
+    gap: 8px;
+
+    min-width: 180px;
+
+    padding: 12px;
+
+    border-radius: 14px;
+
+    background: rgba(25,25,25,0.92);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.18);
+
+    z-index: 100;
+}
+
+.menu-items a {
+    text-decoration: none;
+
+    color: #fff;
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.menu-items a:hover,
+.menu-items a.active {
     background: rgba(255,77,109,0.14);
 
     color: #ff4d6d;
+}
 
-    font-weight: 700;
+.main-nav.open .menu-items {
+    display: flex;
 }
 
 /*

@@ -2,14 +2,22 @@
 {{- with index site.Menus .menuID }}
 
 <nav class="main-nav">
-    {{- range . }}
-        <a
-            href="{{ .URL }}"
-            class="{{ if $page.IsMenuCurrent .Menu . }}active{{ end }}"
-        >
-            {{ .Name }}
-        </a>
-    {{- end }}
+
+    <button class="menu-toggle" aria-label="Toggle Menu">
+        ☰
+    </button>
+
+    <div class="menu-items">
+        {{- range . }}
+            <a
+                href="{{ .URL }}"
+                class="{{ if $page.IsMenuCurrent .Menu . }}active{{ end }}"
+            >
+                {{ .Name }}
+            </a>
+        {{- end }}
+    </div>
+
 </nav>
 
 {{- end }}
