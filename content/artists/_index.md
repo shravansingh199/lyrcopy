@@ -1,4 +1,4 @@
 ---
 title: "List of Artists"
 ---
-Search all artists sorted alphabetically👇
+List of all artists sorted alphabetically👇

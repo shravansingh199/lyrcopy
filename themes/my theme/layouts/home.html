@@ -1,13 +1,7 @@
 {{ define "main" }}
   {{ .Content }}
 
-  {{ $lyrics := where site.RegularPages "Type" "lyrics" }}
-
-{{ $total := len $lyrics }}
-<h4 class="totals">Total posts: <strong>{{ $total }}</strong></h4>
-
-  {{ $paginator := .Paginate $lyrics }}
-
+  {{ $paginator := .Paginate (where site.RegularPages "Type" "lyrics") }}
   {{ range $paginator.Pages }}
     <section>
 

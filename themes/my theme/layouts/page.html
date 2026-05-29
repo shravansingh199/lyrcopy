@@ -21,7 +21,7 @@
 {{ with .Params.artists }}
   <h4 class="artist-list">
   {{ range $index, $element := . -}}
-    {{- if gt $index 0 }}, {{ end }}
+    {{- if gt $index 0 }} {{ end }}
     <a href="{{ (printf "artists/%s" ($element | urlize)) | relURL }}">{{ $element }}</a>
   {{- end }}
   </h4>

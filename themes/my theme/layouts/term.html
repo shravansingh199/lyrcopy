@@ -1,16 +1,50 @@
 {{ define "main" }}
 
-{{ if eq .Data.Singular "artist" }}
-    <p>Browse songs by:</p>
+  {{ if eq .Data.Singular "artist" }}
+    <p>Browse song lyrics by:</p>
   {{ end }}
 
   {{ if eq .Data.Singular "album" }}
-    <p>Browse songs in:</p>
+    <p>Browse song lyrics in:</p>
   {{ end }}
 
   <h2>{{ .Data.Term }}</h2>
+
   {{ .Content }}
-  {{ range sort .Pages "Title" }}
-    <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+
+  {{ $paginator := .Paginate (sort .Pages "Title") }}
+
+  {{ range $paginator.Pages }}
+
+    <section class="term-entry">
+
+      {{ with .Params.albums }}
+        <p class="term-album">
+          <a href="{{ (printf "albums/%s" (. | urlize)) | relURL }}">
+            {{ . }}
+          </a>
+        </p>
+      {{ end }}
+
+      <h3 class="term-song">
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      </h3>
+
+      {{ with .Params.artists }}
+        <p class="term-artist">
+          {{ range $index, $element := . }}
+            {{ if gt $index 0 }}, {{ end }}
+            <a href="{{ (printf "artists/%s" ($element | urlize)) | relURL }}">
+              {{ $element }}
+            </a>
+          {{ end }}
+        </p>
+      {{ end }}
+
+    </section>
+
   {{ end }}
+
+  {{ partial "pagination.html" . }}
+
 {{ end }}

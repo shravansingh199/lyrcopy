@@ -1,5 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NNE51B676P"></script>
 <script>
@@ -11,15 +12,36 @@
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8044173730206377"
      crossorigin="anonymous"></script>
-<title>{{ if .IsHome }}
-    {{ site.Title }}
-    {{ else }}
-      {{ if .Params.seotitle }}
+<title>
+{{ if .IsHome }}
+
+    {{ printf "%s - Gaane Ke Bol" site.Title }}
+
+{{ else if eq .Kind "term" }}
+
+    {{ printf "%s Songs Lyrics | %s" .Title site.Title }}
+
+{{ else }}
+
+    {{ if .Params.seotitle }}
         {{ printf "%s | %s" .Params.seotitle site.Title }}
-      {{ else }}
-    {{ printf "%s | %s" .Title site.Title }}
+    {{ else }}
+        {{ printf "%s | %s" .Title site.Title }}
     {{ end }}
-    {{ end }}
+
+{{ end }}
 </title>
+{{ if eq .Type "lyrics" }}
+
+<meta name="description"
+content="Read {{ index (split .Title " - ") 0 }}{{ with .Params.artists }} sung by {{ delimit . ", " }}{{ end }}{{ with .Params.albums }} in {{ . }}{{ end }} on Lyrify.">
+
+{{ else if .IsHome }}
+
+<meta name="description"
+content="Lyrify.in provides accurate and verified lyrics of Indian songs you love. Find the original lyrics of your favourite Indian songs.">
+
+{{ end }}
+<link rel="canonical" href="{{ .Permalink }}">
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}

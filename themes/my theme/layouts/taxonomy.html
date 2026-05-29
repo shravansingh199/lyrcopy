@@ -1,6 +1,19 @@
 {{ define "main" }}
+
   {{ .Content }}
-  {{ range sort .Pages "Title" }}
-    <h2><a href="{{ .RelPermalink }}">{{ .Data.Term }}</a></h2>
+
+  {{ $paginator := .Paginate (sort .Pages "Title") }}
+
+  {{ range $paginator.Pages }}
+
+    <section class="taxonomy-item">
+      <h2 class="taxonomy-title">
+        <a href="{{ .RelPermalink }}">{{ .Data.Term }}</a>
+      </h2>
+    </section>
+
   {{ end }}
+
+  {{ partial "pagination.html" . }}
+
 {{ end }}
