@@ -72,7 +72,7 @@ body {
 
 body {
     background: #F5F5F5;
-    color: #222;
+    color: #000000;
 
     font-family: sans-serif;
     line-height: 1.5;
@@ -123,6 +123,10 @@ footer {
 a {
   color: rgb(21, 95, 48);
   text-decoration: none;
+}
+
+a:hover {
+  color: rgb(0, 0, 0); 
 }
 
 .song-title {
@@ -275,7 +279,7 @@ a {
     text-transform: uppercase;
     letter-spacing: 1px;
 
-    opacity: 0.65;
+    opacity: 0.7;
 }
 
 .artist-list a {
@@ -408,7 +412,7 @@ a {
 .menu-items a {
     text-decoration: none;
 
-    color: #fff;
+    color: #eeeeee;
 
     padding: 8px 12px;
 
@@ -614,7 +618,7 @@ td:last-child {
 @media (prefers-color-scheme: dark) {
   body {
     background: #111;
-    color: #E0E0E0;
+    color: #ffffff;
   }
   a {
     color: rgb(54, 188, 161);        /* light blue so it shows up on dark bg */
