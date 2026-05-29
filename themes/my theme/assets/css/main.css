@@ -442,8 +442,8 @@ a {
 
 .listpage-album-name a {
     display: inline-block;
-    background: #111;
-    color: #fff;
+    background: #ffffff;
+    color: #222;
     padding: 10px 20px;
     border-left: 5px solid #ff4d6d;
     text-transform: uppercase;
@@ -451,12 +451,17 @@ a {
     font-size: 0.85rem;
     font-weight: bold;
     text-decoration: none;
+
+    border-radius: 6px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+
     transition: 0.25s ease;
 }
 
 .listpage-album-name a:hover {
     background: #ff4d6d;
-    border-left-color: #fff;
+    color: white;
 }
 
 .listpage-album-name a::before {
@@ -472,13 +477,9 @@ a {
 .listpage-song-name a {
     display: inline-block;
 
-    background: linear-gradient(
-        90deg,
-        rgba(20,20,20,0.9) 88%,
-        #ff4d6d 88%
-    );
+    background: #ffffff;
 
-    color: #d8d8d8;
+    color: #222;
     text-decoration: none;
 
     padding: 9px 18px;
@@ -486,8 +487,10 @@ a {
     font-size: 1.25rem;
     font-weight: 600;
     letter-spacing: 1px;
-    text-transform: none;
+
     border-radius: 6px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
 
     transition:
         transform 0.2s ease,
@@ -643,4 +646,19 @@ td:last-child {
     0%, 90%, 100% { filter: brightness(100%); }
     50% { filter: brightness(200%); }
   }
+
+.listpage-album-name a {
+    background: #111;
+    color: #fff;
+}
+
+.listpage-song-name a {
+    background: linear-gradient(
+        90deg,
+        rgba(20,20,20,0.9) 97%,
+        #ff4d6d 88%
+    );
+
+    color: #d8d8d8;
+    }
 }
