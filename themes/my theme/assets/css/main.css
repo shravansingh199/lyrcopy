@@ -547,7 +547,7 @@ a:hover {
 }
 
 .taxonomy-title a:hover {
-  color: white;
+  color: #ff4d6d;
 }
 
 .pagination {
@@ -568,13 +568,14 @@ a:hover {
 
 .pagination a {
   text-decoration: none;
-  padding: 5px 6px;
+  padding: 5px 9px;
   border: none;
 }
 
 .pagination .active a {
   font-weight: bold;
-  border: 1px solid #636363;
+  background: #335845;
+  color: #fff;
   border-radius: 4px;
 }
 
@@ -636,6 +637,10 @@ td:last-child {
         #ff4d6d 88%
     );
 
+    color: #d8d8d8;
+    }
+    .pagination .active a {
+    background: #335845;
     color: #d8d8d8;
     }
 }
