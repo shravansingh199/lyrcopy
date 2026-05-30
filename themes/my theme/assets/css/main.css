@@ -569,7 +569,13 @@ a:hover {
 .pagination a {
   text-decoration: none;
   padding: 5px 9px;
-  border: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: border-color 0.2s ease;
+}
+
+.pagination li:not(.active) a:hover {
+  border-color: #636363;
 }
 
 .pagination .active a {
