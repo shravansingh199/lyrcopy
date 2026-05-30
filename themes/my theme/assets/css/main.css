@@ -1,7 +1,3 @@
-.totals {
-    margin-top: 0;
-}
-
 .top-header {
     display: flex;
     justify-content: space-between;
@@ -54,15 +50,6 @@
     letter-spacing: 0.5px;
 
     opacity: 0.65;
-}
-
-.post-date {
-  font-size: medium;
-  font-style: italic;
-  text-align: right;
-  letter-spacing: 0.05em;
-  color: #9d9d9d;
-  display: block;
 }
 
 html,
@@ -145,6 +132,8 @@ a:hover {
     color: inherit;
 
     position: relative;
+
+    opacity: 0.8;
 }
 
 .song-title::after {
@@ -177,7 +166,7 @@ a:hover {
 
     color: inherit;
 
-    opacity: 0.9;
+    opacity: 1;
 }
 
 .lyrics-content p {
@@ -258,7 +247,7 @@ a:hover {
         opacity 0.2s ease,
         box-shadow 0.2s ease;
 
-    opacity: 0.9;
+    opacity: 1;
 }
 
 .album-title a:hover {
@@ -290,7 +279,7 @@ a:hover {
 }
 
 .artist-list a:not(:last-child)::after {
-    content: " /";
+    content: "/";
     margin-left: 6px;
     opacity: 0.5;
 }
@@ -414,6 +403,8 @@ a:hover {
 
     color: #eeeeee;
 
+    opacity: 0.8;
+
     padding: 8px 12px;
 
     border-radius: 8px;
@@ -433,16 +424,6 @@ a:hover {
 .main-nav.open .menu-items {
     display: flex;
 }
-
-/*
-@media (max-width: 600px) {
-  .post-navigation { flex-direction: column; }
-  .post-navigation .next-song {
-    text-align: right;
-    margin-top: 10px;
-  }
-}
-*/
 
 .listpage-album-name a {
     display: inline-block;
@@ -641,14 +622,6 @@ td:last-child {
   }
   hr {
     border-color: #547273;
-  }
-   .totals {
-    animation: techFlash 0.5s linear 0s 3;
-  }
-
-  @keyframes techFlash {
-    0%, 90%, 100% { filter: brightness(100%); }
-    50% { filter: brightness(200%); }
   }
 
 .listpage-album-name a {

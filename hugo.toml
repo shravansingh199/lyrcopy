@@ -1,6 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'LIRIFY'
+title = 'LYRIFY'
 theme = 'my theme'
 
 [caches]

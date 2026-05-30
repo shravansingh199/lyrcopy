@@ -9,19 +9,29 @@ title = 'My New Hugo Site'
     weight = 10
 
   [[menus.main]]
+    name = 'Artists'
+    pageRef = '/artists/_index'
+    weight = 20
+
+  [[menus.main]]
+    name = 'Albums'
+    pageRef = '/albums/_index'
+    weight = 30
+
+  [[menus.main]]
     name = 'Contact'
     pageRef = '/pages/contact'
-    weight = 20
+    weight = 40
 
   [[menus.main]]
     name = 'Privacy Policy'
     pageRef = '/pages/privacy-policy'
-    weight = 30
+    weight = 50
   
   [[menus.main]]
     name = 'Disclaimer'
     pageRef = '/pages/disclaimer'
-    weight = 40
+    weight = 60
 
 [module]
   [module.hugoVersion]

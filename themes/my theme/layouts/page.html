@@ -1,12 +1,6 @@
 {{ define "main" }}
 <div class="lyrics">
   <h2 class="song-title">{{ .Title }}</h2>
-
-  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-  {{ $dateHuman := .Date | time.Format ":date_long" }}
-  <time class="post-date" datetime="{{ $dateMachine }}">
-  {{ $dateHuman }}
-  </time>
   
 {{ with .Params.albums }}
   <h4 class="album-title">
@@ -19,12 +13,12 @@
   </div>
 
 {{ with .Params.artists }}
-  <h4 class="artist-list">
+  <h6 class="artist-list">
   {{ range $index, $element := . -}}
     {{- if gt $index 0 }} {{ end }}
     <a href="{{ (printf "artists/%s" ($element | urlize)) | relURL }}">{{ $element }}</a>
   {{- end }}
-  </h4>
+  </h6>
 {{ end }}
 <!-- AddToAny BEGIN -->
 <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
