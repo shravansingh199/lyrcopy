@@ -1,11 +1,30 @@
 {{ if ne .Kind "home" }}
 <nav class="breadcrumbs">
+
   <a href="{{ .Site.Home.RelPermalink }}">Home</a>
 
-  {{ with .Params.albums }}
-    <a href="{{ (printf "albums/%s" (. | urlize)) | relURL }}">{{ . }}</a>
+  {{ if eq .Kind "term" }}
+
+    {{ if eq .Data.Plural "albums" }}
+      <a href="/albums/">Albums</a>
+      <span>{{ .Title }}</span>
+
+    {{ else if eq .Data.Plural "artists" }}
+      <a href="/artists/">Artists</a>
+      <span>{{ .Title }}</span>
+
+    {{ end }}
+
+  {{ else }}
+
+    {{ with .Params.albums }}
+      <a href="/albums/">Albums</a>
+      <a href="{{ (printf "albums/%s" (. | urlize)) | relURL }}">{{ . }}</a>
+    {{ end }}
+
+    <span>{{ index (split $.Title " - ") 0 }}</span>
+
   {{ end }}
 
-  <span>{{ index (split .Title " - ") 0 }}</span>
 </nav>
 {{ end }}

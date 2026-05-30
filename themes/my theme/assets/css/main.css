@@ -609,8 +609,8 @@ td:last-child {
     color: #ffffff;
   }
   a {
-    color: rgb(54, 188, 161);        /* light blue so it shows up on dark bg */
-  }
+  color: #a7ceb4;
+    }
   a:hover {
     color: #cfe8ff;     /* optional — slightly brighter hover */
   }
