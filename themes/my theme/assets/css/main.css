@@ -603,6 +603,34 @@ td:last-child {
   padding-left: 0.7rem;
 }
 
+.related-songs {
+    margin-top: 40px;
+    margin-bottom: 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(127,127,127,0.15);
+    border-bottom: 1px solid rgba(127,127,127,0.15);
+}
+
+.related-songs h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.related-songs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.related-songs li {
+    margin: 8px 0;
+}
+
+.related-songs li::before {
+    content: "▸ ";
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background: #111;

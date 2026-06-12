@@ -46,5 +46,58 @@
   {{ end }}
 </div>
 
+{{ $lyricsPages := where site.RegularPages "Type" "lyrics" }}
+
+{{ $related := slice }}
+
+{{ with .Params.artists }}
+  {{ $artistMatches := where $lyricsPages "Params.artists" "intersect" . }}
+  {{ $artistMatches = where $artistMatches "Permalink" "ne" $.Permalink }}
+
+  {{ range $artistMatches }}
+    {{ $related = $related | append . }}
+  {{ end }}
+{{ end }}
+
+{{ with .Params.albums }}
+  {{ $albumMatches := where $lyricsPages "Params.albums" . }}
+  {{ $albumMatches = where $albumMatches "Permalink" "ne" $.Permalink }}
+
+  {{ range $albumMatches }}
+    {{ $related = $related | append . }}
+  {{ end }}
+{{ end }}
+
+{{ if lt (len $related) 5 }}
+
+  {{ $singlesMatches := where $lyricsPages "Params.albums" "Singles" }}
+  {{ $singlesMatches = where $singlesMatches "Permalink" "ne" $.Permalink }}
+
+  {{ range $singlesMatches }}
+    {{ $related = $related | append . }}
+  {{ end }}
+
+{{ end }}
+
+{{ $related = uniq $related }}
+
+{{ if gt (len $related) 0 }}
+
+<div class="related-songs">
+
+  <h3>Related Songs</h3>
+
+  <ul>
+    {{ range first 5 $related }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
+    {{ end }}
+  </ul>
+
+</div>
+
+{{ end }}
+
 </div>
 {{ end }}
