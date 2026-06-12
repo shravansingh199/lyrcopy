@@ -174,7 +174,7 @@ a:hover {
 }
 
 .post-navigation {
-    margin-top: 50px;
+    margin-top: 25px;
     padding-top: 24px;
 
     display: flex;
@@ -604,9 +604,9 @@ td:last-child {
 }
 
 .related-songs {
-    margin-top: 40px;
+    margin-top: 25px;
     margin-bottom: 35px;
-    padding-top: 20px;
+    padding-top: 5px;
     padding-bottom: 20px;
     border-top: 1px solid rgba(127,127,127,0.15);
     border-bottom: 1px solid rgba(127,127,127,0.15);
@@ -624,7 +624,7 @@ td:last-child {
 }
 
 .related-songs li {
-    margin: 8px 0;
+    margin: 11px 0;
 }
 
 .related-songs li::before {
