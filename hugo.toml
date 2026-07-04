@@ -1,7 +1,12 @@
 baseURL = 'https://example.org/'
-languageCode = 'en-us'
 title = 'LYRIFY'
 theme = 'my theme'
+
+defaultContentLanguage = "en"
+
+[languages]
+  [languages.en]
+    locale = "en-US"
 
 [security]
 allowContent = ['.*']
