@@ -3,6 +3,9 @@ languageCode = 'en-us'
 title = 'LYRIFY'
 theme = 'my theme'
 
+[security]
+allowContent = ['^text/html$']
+
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
