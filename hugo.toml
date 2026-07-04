@@ -4,7 +4,7 @@ title = 'LYRIFY'
 theme = 'my theme'
 
 [security]
-allowContent = ['^text/html$']
+allowContent = ['.*']
 
 [caches]
   [caches.images]
